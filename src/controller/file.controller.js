@@ -14,7 +14,7 @@ const upload = async (req, res) => {
     }
 
     res.status(200).send({
-      fileName: req.file.originalname,
+      fileName: req.file.originalname ?? "",
       base64Message: req.file.buffer.toString('base64'),
     });
   } catch (err) {
